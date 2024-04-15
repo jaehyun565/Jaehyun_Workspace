@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;programmers.Programmers_&apos; to &apos;Programmers_로또의최고순위와최저순위&apos;&#x0D;&#x0A;- Original project: &apos;practice&apos;&#x0D;&#x0A;- Original element: &apos;programmers.Programmers_&apos;&#x0D;&#x0A;- Renamed element: &apos;programmers.Programmers_로또의최고순위와최저순위&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Programmers_&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;programmers{Programmers_.java[Programmers_" matchStrategy="1" name="Programmers_로또의최고순위와최저순위" qualified="false" references="true" similarDeclarations="false" stamp="1707782042293" textual="false" version="1.0"/>
-</session>
