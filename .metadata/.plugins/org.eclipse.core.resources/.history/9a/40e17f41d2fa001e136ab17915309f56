@@ -1,0 +1,70 @@
+package game.ui;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import game.make.repository.ChoiceRepository;
+import game.make.user.UserControl;
+import game.make.user.UserControlImpl;
+import game.util.GameUtil;
+
+public class ChoiceUi {
+	// 의존성 주입
+	private static UserControl gm = UserControlImpl.getInstance();
+	private static ChoiceRepository repository = ChoiceRepository.getInstance();
+	// 저장소
+	private static String[][] DB = repository.getDB();
+	private static int[][][] change = repository.getChange();
+	private static int[][][] condition = repository.getCondition();
+	private static String[][] result = repository.getResult();
+
+	public static void choice() {
+		for (int i = 0; i < DB.length; i++) {
+			// i번 문항 출력
+			GameUtil.printQ(DB[i][0]);
+
+			// 현재 유저 스탯
+			int[] level = gm.getLevel();
+
+			boolean flag = false;
+			if (condition[i][0][0] != 0) { // 확률형 결과를 내놓는 선택지 번호
+				flag = true; // 확률형 결과
+			}
+
+			// 선택지 j번의 스탯 제한 확인
+			List<Integer> out = new ArrayList<>();
+			for (int j = 1; j <= 4; j++) {
+				for (int k = 0; k < 4; k++) {
+					if (level[k] < condition[i][j][k]) {
+						out.add(j);
+					}
+				}
+			}
+
+			// 선택지 출력 및 답변 입력
+			int n;
+			if (out.isEmpty()) {
+				n = GameUtil.printMulti(DB[i]);
+			} else {
+				n = GameUtil.printMulti(DB[i], out);
+			}
+			
+			// 결과 출력
+			String res = "";
+			if(!flag || (flag && n!= condition[i][0][0])) {
+				res = result[i][n];
+			} else {
+				res = repository.getChance(i, level);
+			}
+			
+
+			// 결과 출력
+			GameUtil.printMsg(res);
+			GameUtil.printLine();
+
+			// 변동 스탯 반영
+			gm.changeStat(change[i][n]);
+		}
+	}
+
+}

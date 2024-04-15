@@ -1,0 +1,12 @@
+package com.ssafy.servlet;
+
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+
+/**
+ * Servlet implementation class MainServlet
+ */
+public class MainServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+}

@@ -1,0 +1,19 @@
+package APS_10_LinkedList;
+
+class Nodea{
+	
+}
+
+class DoubleLinkedList{
+	Node head;
+	Node tail;
+	int size;
+}
+
+
+
+public class LinkedList_양방향연결리스트 {
+	public static void main(String[] args) {
+		
+	}
+}

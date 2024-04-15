@@ -1,0 +1,49 @@
+package SWexpert_08_Queue2;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Solution_1860_진기의최고급붕어빵 {
+	public static void main(String[] args) throws NumberFormatException, IOException {
+//		System.setIn(new FileInputStream("input.txt"));
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		int t = Integer.parseInt(br.readLine());
+		next :for (int testCase = 1; testCase <= t; testCase++) {
+			String[] s1 = br.readLine().split(" ");
+			String[] s2 = br.readLine().split(" ");
+			int num = 0, time = 0, count = 0;
+
+			for (int i = 0; i < 3; i++) {
+				num = Integer.parseInt(s1[0]);
+				time = Integer.parseInt(s1[1]);
+				count = Integer.parseInt(s1[2]);
+			}
+
+			int[] tmp = new int[num];
+			for (int i = 0; i < num; i++) {
+				tmp[i] = Integer.parseInt(s2[i]);
+			}
+			
+			int[] person = new int[num];
+			
+			
+			int supply_count = 0;
+			int sell_count = 0;
+			for (int i = 0; i < num; i++) {
+				supply_count = (person[i] / time) * count;
+				System.out.println(person[i]);
+				System.out.println(time);
+				System.out.println(count);
+				System.out.println(supply_count);
+				sell_count++;
+				if (supply_count - sell_count < 0);
+				System.out.println("impossible");
+				continue next;
+			}
+			System.out.println("possible");
+		}
+	}
+}

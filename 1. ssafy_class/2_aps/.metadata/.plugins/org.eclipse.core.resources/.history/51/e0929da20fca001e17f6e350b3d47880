@@ -1,0 +1,20 @@
+package APS_10_LinkedList;
+package APS_10_LinkedList.double;
+
+class Node{
+	
+}
+
+class DoubleLinkedList{
+	Node head;
+	Node tail;
+	int size;
+}
+
+
+
+public class LinkedList_양방향연결리스트 {
+	public static void main(String[] args) {
+		
+	}
+}

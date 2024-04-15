@@ -1,0 +1,49 @@
+package programmers;
+
+public class Programmers_가장많이받은선물 {
+
+//	class Solution {
+		public static int solution(String[] friends, String[] gifts) {
+			int answer = 0;
+
+			String[][] table = new String[friends.length+1][friends.length+1];
+			
+			for(int r = 0; r<friends.length;r++) {
+				for(int c = 0; c<friends[0].length();c++) {
+					table[0][c] = friends[c];
+					table[r][0] = friends[r];
+				}
+			}
+			
+			for(int r = 0; r<friends.length;r++) {
+				for(int c = 0; c<friends[0].length();c++) {
+					System.out.print(table[r][c] + " ");					
+				}
+				System.out.println();
+			}
+				
+			
+			for (int i = 0; i < gifts.length; i++) {
+				for (int c = 0; c < friends.length; c++) {
+					for (int r = 0; r < friends[0].length(); r++) {
+						if (gifts[i].split(" ")[0] == table[r][c]) {
+							if(gifts[i].split(" ")[1] == table[r][c]) {
+//								table[r][c]
+							}
+						}
+					}
+				}
+			}
+
+			return answer;
+		}
+//	}
+	public static void main(String[] args) {
+		String[] a = {"muzi", "frodo", "ryan","neo"};
+		
+		solution(a,a);
+		
+		
+	}
+
+}

@@ -1,0 +1,56 @@
+package programmers;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Programmers_가장많이받은선물 {
+
+//	class Solution {
+	public static int solution(String[] friends, String[] gifts) {		
+	        Map<String, Integer> map = new HashMap<>();
+	        for (int i = 0; i < friends.length; i++) {
+	            map.put(friends[i], i);
+	        }
+	        int[] index = new int[friends.length];
+	        int[][] record = new int[friends.length][friends.length];
+
+	        for (String str : gifts) {
+	            String[] cur = str.split(" ");
+	            index[map.get(cur[0])]++;
+	            index[map.get(cur[1])]--;
+	            record[map.get(cur[0])][map.get(cur[1])]++;
+	        }
+	        System.out.println(Arrays.toString(index));
+	        
+	        for(int r=0;r<friends.length;r++) {
+	        	for(int c=0;c<friends.length;c++) {
+	        		System.out.print(record[r][c]+" ");
+	        	}
+	        	System.out.println();
+	        }
+	        
+
+	       int ans = 0;
+	       for (int i = 0; i < friends.length; i++) {
+	           int cnt = 0;
+	           for (int j = 0; j < friends.length; j++) {
+	               if(i == j) continue;
+	               if (record[i][j] > record[j][i]) cnt++;
+	               else if (record[i][j] == record[j][i] && index[i] > index[j]) cnt++; 
+	           }
+	           ans = Math.max(cnt, ans);
+	       }
+	        return ans;
+	    }
+
+//	}
+	public static void main(String[] args) {
+		String[] a = { "muzi", "frodo", "ryan", "neo" };
+		String[] b = { "muzi frodo", "ryan frodo", "neo ryan", "muzi neo" };
+
+		System.out.println(solution(a,b));
+
+	}
+
+}

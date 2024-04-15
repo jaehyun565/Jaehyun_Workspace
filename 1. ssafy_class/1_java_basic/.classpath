@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="Java_Day01_기본문법_제어문/src"/>
+	<classpathentry kind="src" path="java_Day03_2차원배열/src"/>
+	<classpathentry kind="src" path="Java_Day04_클래스와객체/src"/>
+	<classpathentry excluding="class04/|class04/" kind="src" path="Java_Day05_객체배열관리/src"/>
+	<classpathentry kind="src" path="Java_Day06_상속과다형성/src"/>
+	<classpathentry kind="src" path="Java_Day07_추상클래스_인터페이스_제네릭/src"/>
+	<classpathentry kind="output" path="Java_Day01_기본문법_제어문/bin"/>
+</classpath>

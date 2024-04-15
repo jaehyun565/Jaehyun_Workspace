@@ -1,0 +1,60 @@
+package programmers;
+
+public class Programmers_가장많이받은선물 {
+
+//	class Solution {
+	public static int solution(String[] friends, String[] gifts) {
+		int answer = 0;
+
+		String[][] table = new String[friends.length + 1][friends.length + 1];
+
+		for (int i = 0; i < friends.length; i++) {
+			table[0][i + 1] = friends[i];
+			table[i + 1][0] = friends[i];
+		}
+
+//		// 배열 프린트해보는 코드
+//		for (int r = 0; r <= friends.length; r++) {
+//			for (int c = 0; c <= friends[0].length(); c++) {
+//				System.out.print(table[r][c] + " ");
+//			}
+//			System.out.println();
+//		}
+		
+		System.out.println(gifts[0].split(" ")[0]);
+
+		for (int i = 0; i < gifts.length; i++) {
+			for (int c = 0; c < friends.length; c++) {
+				for (int r = 0; r < friends[0].length(); r++) {
+					if (gifts[i].split(" ")[0] == table[r][0]) {
+						if (gifts[i].split(" ")[1] == table[0][c]) {
+								table[r][c] = String.valueOf(1);
+						}
+					}
+				}
+			}
+		}
+		
+		// 배열 프린트해보는 코드
+		for (int r = 0; r <= friends.length; r++) {
+			for (int c = 0; c <= friends[0].length(); c++) {
+				System.out.print(table[r][c] + " ");
+			}
+			System.out.println();
+		}
+		
+		
+
+		return answer;
+	}
+
+//	}
+	public static void main(String[] args) {
+		String[] a = { "muzi", "frodo", "ryan", "neo" };
+		String[] b = { "muzi frodo", "ryan frodo", "neo ryan", "muzi neo" };
+
+		solution(a, a);
+
+	}
+
+}

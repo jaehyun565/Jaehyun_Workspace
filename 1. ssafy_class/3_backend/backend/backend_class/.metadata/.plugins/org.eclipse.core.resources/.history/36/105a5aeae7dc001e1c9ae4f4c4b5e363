@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>El_eq</title>
+</head>
+<body>
+	<!-- request영역에서 id 파라미터를 꺼내와보자 -->
+	<%= request.getParameter("id") %><br>
+	{param.id}<br>
+	
+	
+	== : <%=request.getParameter("id") == "ssafy" %><br>
+	equals() : <%=request.getParameter("id").equals("ssafy") %><br>
+	== : {param.id} == "ssafy"<br>
+	equals() : {param.id eq "ssafy"}<br>
+</body>
+</html>

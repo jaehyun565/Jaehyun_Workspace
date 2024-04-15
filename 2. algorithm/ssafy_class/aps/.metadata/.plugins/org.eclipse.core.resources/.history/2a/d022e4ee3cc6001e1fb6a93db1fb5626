@@ -1,0 +1,42 @@
+package programmers;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Programmers_추억점수_lv1 {
+	public int[] solution(String[] name, int[] yearning, String[][] photo) {
+		int[] answer = {};
+
+		Map<String, Integer> map = new HashMap<>();
+
+		for(int i=0;i<name.length;i++) {
+			map.put(name[i], yearning[i]);
+		}
+		
+		for(int r= 0;r<photo.length;r++) {
+			for(int c= 0;c<photo[r].length;c++) {
+				if(photo[r][c].equals(map.key))
+			}
+		}
+		System.out.println(map.get("a"));
+
+		return answer;
+	}
+
+	public static void main(String[] args) {
+		String[] name = { "may", "kein", "kain", "radi" };
+		int[] yearning = { 5, 10, 1, 3 };
+//		
+//		solution()
+
+		Map<String, Integer> map = new HashMap<>();
+
+		for(int i=0;i<name.length;i++) {
+			map.put(name[i], yearning[i]);
+		}
+
+		System.out.println(map.get("kain"));
+		System.out.println(map.containsKey("may"));
+
+	}
+}

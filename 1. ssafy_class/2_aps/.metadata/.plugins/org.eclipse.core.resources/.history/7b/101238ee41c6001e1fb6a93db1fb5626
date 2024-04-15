@@ -1,0 +1,36 @@
+package programmers;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Programmers_햄버거만들기_lv1 {
+	public static int solution(int[] ingredient) {
+        int answer = 0;
+        
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i : ingredient) {
+        	queue.offer(i);
+        }
+        
+        while(!queue.isEmpty()) {
+        	int a = queue.poll();
+        	if(a == 1) {
+        		if(queue.peek() !=null && queue.peek() == 2) {
+        			queue.poll();
+        			if(queue.peek() !=null && queue.peek() == 3) {
+        				answer++;
+        				queue.poll();
+        			}
+        		}
+        	}
+        }
+        
+        return answer;
+    }
+	
+	public static void main(String[] args) {
+		int[] ingredient = {2,1,1,2,3,1,2,3,1};
+		
+		System.out.println(solution(ingredient));
+	}
+}

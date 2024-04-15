@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;BackEnd_01_Servlet&apos;" deleteContents="true" description="Delete resource &apos;BackEnd_01_Servlet&apos;" element1="/BackEnd_01_Servlet" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1709601358204"/>&#x0A;<refactoring comment="Delete resource &apos;03_Cookie_Session&apos;" deleteContents="false" description="Delete resource &apos;03_Cookie_Session&apos;" element1="/03_Cookie_Session" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1709772960012"/>
+</session>

@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>El_eq</title>
+</head>
+<body>
+	<%
+	pageContext.setAttribute("name", "page 재현");
+	request.setAttribute("name", "request 재현");
+	session.setAttribute("name", "session 재현");
+	application.setAttribute("name", "application 재현");	
+	%>
+	
+	JSP Page 영역 접근 : <%= pageContext.getAttribute("name:") %>
+	EL (Page) : ${pageScope.name }<br>
+	EL (Request) : ${requestScope.name }<br>
+	EL (Session) : ${sessionScope.name }<br>
+	EL (Application) : ${applicationScope.name }<br>
+	
+	그냥 냅다 name 속성 가져와 : ${name} <br>
+	<!-- 그냥 name가져오면 가장 안쪽부터 찾으면서 null값이 아닌 값을 호출해줌. -->
+	
+</body>
+</html>

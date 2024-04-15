@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>El_eq</title>
+</head>
+<body>
+	<%
+	pageContext.setAttribute("name", "page 재현");
+	request.setAttribute("name", "request 재현");
+	session.setAttribute("name", "session 재현");
+	application.setAttribute("name", "application 재현");	
+	%>
+	
+	JSP Page 영역 접근 : <%= pageContext.getAttribute("name:") %>
+	EL (Page) : ${pageScope.name }<br>
+	EL (Request) : ${requestScope.name }<br>
+	EL (Session) : ${sessionScope.name }<br>
+	EL (Application) : ${applicationScope.name }<br>
+	
+	
+</body>
+</html>

@@ -1,0 +1,19 @@
+package com.ssafy.myservlet;
+
+import java.io.IOException;
+
+import jakarta.servlet.GenericServlet;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+
+public class MyServlet extends GenericServlet {
+
+	@Override
+	public void service(ServletRequest arg0, ServletResponse arg1) throws ServletException, IOException {
+		// servlet의 기본체제인 init이나 destroy등은 이미 구현이 되어있고
+		// service만 직접 구현해라.
+		
+	}
+
+}
