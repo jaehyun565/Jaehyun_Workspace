@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const URL = 'https://jsonplaceholder.typicode.com/todos/1'
+
+    //AJAX 통신 시작
+    const xhr = new XMLHttpRequest()
+
+    //xhr 보내기 위해서 open 메서드를 활용
+    xhr.open('GET', URL)
+    //요청 보내기
+    xhr.send()
+    
+    console.log(xhr)
+    const todo = xhr.responseText
+    console.log(typeof(todo)) // String이 나오는데?!
+    console.log(todo) // 정작 출력하면 아무것도 안나옴!!
+    // 그 이유는 readystate가 1번이기 때문이다
+    // 값이 보이려면 readystate가 4번이 되어야함
+  </script>
+</body>
+
+</html>
