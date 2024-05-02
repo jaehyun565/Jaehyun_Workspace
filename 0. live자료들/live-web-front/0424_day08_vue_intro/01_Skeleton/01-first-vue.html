@@ -6,17 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!-- 코드를 작성해보세요. -->
+  <script src = "https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
   <div id="app">
-    <h1>  <!-- 여기도 --> </h1>
-    <button> <!-- 여기도- -> </button>
-      Count is:  <!-- 여기도 -->
+    <h1> {{msg}} </h1>
+    <button @click="onClick">
+      Count is: {{count}}
     </button>
   </div>
   <script>
     // 코드를 작성해보세요.
+    const { createApp, ref } = Vue
+    const app = createApp({
+      setup(){
+        const msg = ref("클릭하면 숫자가 올라감")
+        const count = ref(0)
+
+        const onClick =() =>{
+          return count.value++
+        }
+        return{
+          msg, count, onClick
+        }
+      }
+
+    })
+    app.mount('#app')
 
 
 

@@ -1,0 +1,55 @@
+<!-- binding-inline-styles.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <!-- 1. Binding to Objects -->
+    <!-- 1-a style="color: pink; font-size: 1rem"-->
+    <div :style="{color : activeColor, fontSize : fontSize+'rem'}">테스트</div>
+
+    <!-- 1-b style="font-size:1rem;"-->
+    <div :style="{'font-size' : fontSize+'rem'}">해보기</div>
+
+    <!-- 1-c style="color: pink; font-size: 1rem" 객체사용하세용-->
+    <div :style="myStyle">객체 사용해서 만들기</div>
+
+    <!-- 2. Binding to Arrays -->
+    <div :style="[{color:activeColor}, {fontSize:fontSize+'rem'}]">되나?</div>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref } = Vue
+    const app = createApp({
+      setup() {
+        const activeColor = ref('pink')
+        const fontSize = ref(1)
+        const myStyle = ref({
+          color : activeColor.value,
+          fontSize : fontSize.value+'rem'
+        })        
+        return {
+          activeColor,
+          fontSize,
+          myStyle
+
+        }
+      }
+    })
+    app.mount("#app")
+
+
+
+  </script>
+</body>
+
+</html>

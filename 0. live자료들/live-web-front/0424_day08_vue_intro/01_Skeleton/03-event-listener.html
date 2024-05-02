@@ -5,15 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src = "https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
   <div id="app">
-    <button></button>
+    <button @click="increasement">
+     카운트가 올라간다 :  {{cnt}}
+
+    </button>
   </div>
 
   <script>
     // 코드를 작성해보세요.
+    const {createApp, ref} = Vue
+    const app = createApp({
+      setup(){
+        const cnt = ref(0)
+
+        const increasement = function(){
+          cnt.value++
+        }
+        return{
+          cnt, increasement
+        }
+      }
+
+    })
+    app.mount("#app")
   </script>
 </body>
 
